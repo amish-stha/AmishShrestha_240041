@@ -108,3 +108,11 @@ plt.tight_layout()
 plt.show()
 
 
+#transaction amount distributionplt.figure(figsize=(8, 4))
+sns.histplot(train_df['amt'], bins=100, log_scale=True, kde=True)
+plt.title('Distribution of Transaction Amounts (Log Scale)')
+plt.xlabel('Transaction Amount')
+plt.ylabel('Frequency')
+plt.tight_layout()
+plt.show()
+
