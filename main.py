@@ -116,3 +116,14 @@ plt.ylabel('Frequency')
 plt.tight_layout()
 plt.show()
 
+#fraud by category# Reload raw data temporarily for this plot only
+raw_df = pd.read_csv('fraudTrain.csv')
+
+plt.figure(figsize=(10, 5))
+top_categories = raw_df['category'].value_counts().nlargest(10).index
+sns.countplot(data=raw_df[raw_df['category'].isin(top_categories)], x='category', hue='is_fraud')
+plt.xticks(rotation=45)
+plt.title('Fraud Count by Transaction Category (Top 10)')
+plt.tight_layout()
+plt.show()
+
