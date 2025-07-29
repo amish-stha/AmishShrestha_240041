@@ -95,3 +95,16 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
 
+#visualization
+
+# class distribution
+plt.figure(figsize=(6, 4))
+sns.countplot(x='is_fraud', data=train_df)
+plt.title('Fraud vs Non-Fraud Transactions')
+plt.xlabel('Is Fraud')
+plt.ylabel('Count')
+plt.xticks([0, 1], ['Not Fraud', 'Fraud'])
+plt.tight_layout()
+plt.show()
+
+
